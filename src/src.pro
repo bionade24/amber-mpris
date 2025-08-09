@@ -15,7 +15,14 @@ use_system_dbus {
 
 DEPENDPATH += ../qtdbusextended
 INCLUDEPATH += ../qtdbusextended
-LIBS += -L../qtdbusextended -ldbusextended-qt5
+
+LIBS += -L../qtdbusextended -ldbusextended-qt6
+#equals(QT_MAJOR_VERSION, 5) {
+#LIBS += -L../qtdbusextended -ldbusextended-qt5
+#}
+#equals(QT_MAJOR_VERSION, 6) {
+#LIBS += -L../qtdbusextended -ldbusextended-qt6
+#}
 
 # Generate pkg-config support by default
 # Note that we HAVE TO also create prl config as QMake implementation
